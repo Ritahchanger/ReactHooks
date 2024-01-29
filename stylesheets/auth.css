@@ -1,0 +1,82 @@
+body{
+    background:#f2f2f2;
+}
+.auth_form_container{
+    margin-top:2rem;
+}
+.auth_form_container form{
+    width:100%;
+    background: #fff;;
+    padding:0.5rem 1.5rem 1.5rem 1.5rem;
+    border-radius:10px;
+    box-shadow:0 0 5px rgba(0,0,0,0.25);
+}
+.auth_form_container #login_form{
+    max-width:600px;
+    width:90%;
+    margin:0 auto;
+    margin-top:10rem;
+}
+.auth_form_container #signup_form{
+    max-width:750px;
+    width:90%;
+    margin:0 auto;
+    margin-top:1rem; 
+}
+.auth_form_container #signup_form .input_group{
+    flex-basis: 48%;
+}
+.auth_form_container .input_group{
+    position:relative;
+}
+.auth_form_container input{
+    height:30px;
+    background: transparent;
+    border:none;
+    border-bottom:1px solid #ccc;
+    outline:none;
+    cursor: pointer;
+    margin-bottom:1rem;
+}
+.auth_form_container input:focus{
+    border-bottom:3px solid #ff004f;
+}
+.auth_form_container .input_group{
+    margin:2rem 0rem;
+}
+.auth_form_container input[type=submit]{
+    border:none;
+    height:40px;
+    cursor:pointer;
+    background:#000;
+    color:#ffff;
+    font-size: 2rem;
+}
+.auth_form_container input[type=submit]:hover{
+    background:#290350;
+}
+.auth_handle{
+    font-size:1.7rem;
+}
+.error{
+    position: absolute;
+    font-size:1.4rem;
+    color:#ff0000;
+    left:0;
+    font-weight:600;
+    display:none;
+}
+#email_status{
+    display:block;
+}
+#username_status{
+    display:block;
+}
+#password_status{
+    display:block;
+}
+@media(max-width:450px){
+    .auth_form_container #signup_form .flex{
+        flex-direction:column;
+    }
+}
