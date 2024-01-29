@@ -3,7 +3,7 @@ include("../includes/auth_header.php");
 ?>
 <div class="container">
     <div class="auth_form_container">
-        <form action="./password_verify.php" id="password_form_handler" class="form">
+        <form id="password_form_handler">
             <div class="preloaders" id="circular_preloader">
                 <img src="../images/Spinner-2.gif" alt="">
             </div>
@@ -17,24 +17,34 @@ include("../includes/auth_header.php");
 </div>
 <script>
     $(document).ready(() => {
-
         const password_form_handler = document.getElementById("password_form_handler");
         password_form_handler.addEventListener("submit", (e) => {
+            e.preventDefault();
 
-           
-
-            const email=document.getElementById("email").value;
-            const emailError=document.getElementById("email_error");
-            email_validator(email,emailError);
-
-            if(!email_validator(email,emailError)){
-                e.preventDefault();
+            const email = document.getElementById("email").value;
+            const emailError = document.getElementById("email_error");
+            if (!email_validator(email, emailError)) {
+                return;
             }
 
-            
+            const formData = {
+                email: email
+            };
+
+            $('#circular_preloader').show();
+            $.ajax({
+                type: "POST",
+                url: './password_verify.php',
+                data: formData,
+                success: function(response) {
+                    $('#circular_preloader').hide();
     
-
-
+                },
+                error: function(xhr, status, error) {
+                    $('#circular_preloader').hide();
+            
+                }
+            });
         });
 
         const email_validator = (email, inputError) => {
@@ -53,7 +63,6 @@ include("../includes/auth_header.php");
                 return true;
             }
         };
-
     });
 </script>
 <?php include("../includes/auth_footer.php"); ?>
