@@ -1,0 +1,13 @@
+{
+    "name": "ritahchanger/react-hooks",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "authors": [
+        {
+            "name": "Dennis Peter",
+            "email": "peterdennis573@gmail.com"
+        }
+    ]
+}

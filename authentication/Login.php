@@ -62,7 +62,7 @@
                 </div>
                 <input type="submit" value="LOGIN" id="submit-btn">
                 <p style="text-align: center;font-size: 2rem;margin-top:1rem; ">OR</p>
-                <p class="auth_handle" style="text-align:center;"><a href="#">Forgot password?</a><br>Need an account? - <a href="../authentication/Signup.php">SignUp</a></p>
+                <p class="auth_handle" style="text-align:center;"><a href="./passwordhandle.php">Forgot password?</a><br>Need an account? - <a href="../authentication/Signup.php">SignUp</a></p>
             </form>
         </div>
 

@@ -26,6 +26,15 @@ body{
 .auth_form_container #signup_form .input_group{
     flex-basis: 48%;
 }
+.auth_form_container #password_form_handler{
+    display:FLEX;
+    flex-direction: column;
+    justify-content:CENTER;
+    align-items:center;
+}
+.auth_form_container #password_form_handler .input_group{
+    width:100%;
+}
 .auth_form_container .input_group{
     position:relative;
 }
@@ -75,6 +84,11 @@ body{
 #password_status{
     display:block;
 }
+
+#circular_preloader{
+    display:none;
+}
+
 @media(max-width:450px){
     .auth_form_container #signup_form .flex{
         flex-direction:column;
