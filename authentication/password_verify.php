@@ -8,61 +8,62 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-
-if($_SERVER["REQUEST_METHOD"]==="POST"){
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST["email"];
+    
     require_once("../database/functions.php");
+
     $connection=connection();
-    $connection->select_db($database);
-    $email=$_POST["email"];
 
-    $stmt_check_email=$connection->prepare("SELECT email FROM users WHERE email=?");
-    $stmt_check_email->bind_param("s",$email);
-    $stmt_check_email->execute();
-    $stmt_check_email_results=$stmt_check_email
+    if(createDatabase($database)){
 
-    try {
+        $connection->select_db($database);
+        $stmt_email_check = $connection->prepare("SELECT email FROM users WHERE email=?");
+        $stmt_email_check->bind_param("s", $email);
+        $stmt_email_check->execute();
+        $stmt_email_check_results = $stmt_email_check->get_result();
 
-        require_once('../vendor/autoload.php');
-        require_once('../vendor/phpmailer/phpmailer/src/PHPMailer.php');
-        require_once('../vendor/phpmailer/phpmailer/src/SMTP.php');
-        require_once('../vendor/phpmailer/phpmailer/src/Exception.php');
+        if($stmt_email_check_results->num_rows===0){
+            echo json_encode(array("emailfound"=>true));
+        }else{
+            try {
+                require_once('../vendor/autoload.php');
+                require_once('../vendor/phpmailer/phpmailer/src/PHPMailer.php');
+                require_once('../vendor/phpmailer/phpmailer/src/SMTP.php');
+                require_once('../vendor/phpmailer/phpmailer/src/Exception.php');
+        
+                $mail = new PHPMailer(true);
+                $mail->isSMTP();
+                $mail->Host       = 'smtp.gmail.com';
+                $mail->SMTPAuth   = true;
+                $mail->Username   = 'dennispeter2580@gmail.com';
+                $mail->Password   = 'erux hjgf yton farc';
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port       = 587;
+                $mail->setFrom($email, 'KenWays');
+                $mail->addAddress($email);
+                $mail->isHTML(true);
+                $mail->Subject = 'KenWays';
+                $verificationCode = generateRandomString(11);
+                $mail->Body = "<p style='font-weight:600;font-size:1.5rem;text-align:center;'>One time reset code don't share:</br><span style='font-size:2.5;font-weight:700;'>{$verificationCode}</span></br> <a href='http://localhost/phpfullstack/1.1/ecommerce/authentication/success.php?email={$_SESSION['email']}'style='font-size:1.5rem;'>Click this link to reset your password</a></p>";
+                $mail->send();
+                echo 'Message has been sent';
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
 
-        $mail = new PHPMailer(true);
+        }
 
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'dennispeter2580@gmail.com';
-        $mail->Password   = 'rjsh fupl jcdm ywrn';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
-        $mail->setFrom($email, 'Kenywaa hospital');
-        $mail->addAddress($email);
-        $mail->isHTML(true);
-        $mail->Subject = 'ECOMMERCE PASSWORD CHANGE';
-
-
-        $verificationCode = generateRandomString(11);
-
-        $mail->Body = "<p style='text-align:center;font-'>Click this link to reset your password <a href='http://localhost/phpfullstack/1.4/ReactHooks/authentication/resetPassword.php'><br>This is a one time reset code, don't share<br><span>{$verificationCode}</span></p>";
-        $mail->send();
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }    
+    }
 
 
 }
-function generateRandomString($length=11){
+function generateRandomString($length = 11)
+{
     $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    $randomString="";
-
-    for($i=0;$i<$length;$i++){
-        $randomString.=$characters[rand(0,strlen($characters)-1)];
+    $randomString = "";
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
     }
     return $randomString;
 }
-
-
-
-?>

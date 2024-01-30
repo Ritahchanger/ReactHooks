@@ -38,9 +38,11 @@ include("../includes/auth_header.php");
                 data: formData,
                 success: function(response) {
                     $('#circular_preloader').hide();
+                    console.log(response);
     
                 },
                 error: function(xhr, status, error) {
+                    console.log(error);
                     $('#circular_preloader').hide();
             
                 }
