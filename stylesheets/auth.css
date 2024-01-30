@@ -88,6 +88,11 @@ body{
 #circular_preloader{
     display:none;
 }
+#email_found{
+    display:block;
+}
+
+
 
 @media(max-width:450px){
     .auth_form_container #signup_form .flex{

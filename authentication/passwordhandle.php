@@ -10,6 +10,7 @@ include("../includes/auth_header.php");
             <div class="input_group">
                 <input type="email" name="email" id="email" placeholder="Enter your email...">
                 <p class="error" id="email_error">Enter email...</p>
+                <p class="error" id="email_found"></p>
             </div>
             <input type="submit" value="SENT">
         </form>
@@ -38,13 +39,21 @@ include("../includes/auth_header.php");
                 data: formData,
                 success: function(response) {
                     $('#circular_preloader').hide();
-                    console.log(response);
-    
+                    const jsonData = JSON.parse(response);
+                    const emailfound = document.getElementById("email_found");
+                    console.log(jsonData);
+                    if (jsonData.emailfound === false) {
+                        emailfound.style.color = "#ff0000";
+                        emailfound.innerText = "This email is not registered!";
+
+                    } else {
+                        emailfound.style.color = "#006400";
+                        emailfound.innerText = "Check your email for a verification link.";
+                    }
                 },
                 error: function(xhr, status, error) {
                     console.log(error);
                     $('#circular_preloader').hide();
-            
                 }
             });
         });
@@ -53,11 +62,11 @@ include("../includes/auth_header.php");
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             if (email.trim().length === 0) {
                 inputError.style.display = "block";
-                inputError.innerText = "Please fill this field";
+                inputError.innerText = "Please fill in this field";
                 return false;
             } else if (!emailRegex.test(email)) {
                 inputError.style.display = "block";
-                inputError.innerText = "Type valid email address";
+                inputError.innerText = "Enter a valid email address";
                 return false;
             } else {
                 inputError.style.display = "none";
@@ -67,4 +76,5 @@ include("../includes/auth_header.php");
         };
     });
 </script>
+
 <?php include("../includes/auth_footer.php"); ?>

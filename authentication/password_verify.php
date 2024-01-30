@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -10,12 +11,13 @@ use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
-    
+    $_SESSION['email']=$email;
+
     require_once("../database/functions.php");
 
-    $connection=connection();
+    $connection = connection();
 
-    if(createDatabase($database)){
+    if (createDatabase($database)) {
 
         $connection->select_db($database);
         $stmt_email_check = $connection->prepare("SELECT email FROM users WHERE email=?");
@@ -23,15 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt_email_check->execute();
         $stmt_email_check_results = $stmt_email_check->get_result();
 
-        if($stmt_email_check_results->num_rows===0){
-            echo json_encode(array("emailfound"=>true));
-        }else{
+        if ($stmt_email_check_results->num_rows === 0) {
+            echo json_encode(array("emailfound" => false));
+        } else {
             try {
                 require_once('../vendor/autoload.php');
                 require_once('../vendor/phpmailer/phpmailer/src/PHPMailer.php');
                 require_once('../vendor/phpmailer/phpmailer/src/SMTP.php');
                 require_once('../vendor/phpmailer/phpmailer/src/Exception.php');
-        
+
                 $mail = new PHPMailer(true);
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.gmail.com';
@@ -45,18 +47,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->isHTML(true);
                 $mail->Subject = 'KenWays';
                 $verificationCode = generateRandomString(11);
-                $mail->Body = "<p style='font-weight:600;font-size:1.5rem;text-align:center;'>One time reset code don't share:</br><span style='font-size:2.5;font-weight:700;'>{$verificationCode}</span></br> <a href='http://localhost/phpfullstack/1.1/ecommerce/authentication/success.php?email={$_SESSION['email']}'style='font-size:1.5rem;'>Click this link to reset your password</a></p>";
+                $mail->Body = "<p style='font-weight:600;font-size:1.5rem;text-align:center;'>One time reset code don't share:</br><span style='font-size:2.5;font-weight:700;'>{$verificationCode}</span></br> <a href='http://localhost/phpfullstack/1.4/ReactHooks/authentication/resetPassword.php?email={$_SESSION['email']}&code={$verificationCode}''style='font-size:1.5rem;'>Click this link to reset your password</a></p>";
                 $mail->send();
-                echo 'Message has been sent';
+                echo json_encode(array("message" => "Email sent successfully"));
             } catch (Exception $e) {
-                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                http_response_code(500); // Internal Server Error
+                echo json_encode(array("error" => "Email could not be sent. Mailer Error: " . $mail->ErrorInfo));
             }
-
         }
-
     }
-
-
 }
 function generateRandomString($length = 11)
 {
