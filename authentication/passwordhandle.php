@@ -47,7 +47,7 @@ include("../includes/auth_header.php");
                         emailfound.innerText = "This email is not registered!";
 
                     } else {
-                        emailfound.style.color = "#006400";
+                        emailfound.style.color = "#00D100";
                         emailfound.innerText = "Check your email for a verification link.";
                     }
                 },
