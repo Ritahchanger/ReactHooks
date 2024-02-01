@@ -26,7 +26,11 @@
                 $password_status = "Wrong password";
             } else {
                 $_SESSION['id'] = $user_data['user_id'];
-                redirect("./Signup.php");
+                $_SESSION['fname'] = $user_data['firstName'];
+                $_SESSION['sname'] = $user_data['secondName'];
+                $_SESSION['username'] = $user_data['username'];
+                $_SESSION['email'] = $user_data['email'];
+                redirect("../system/admin.php?id={$_SESSION['id']}");
             }
         } else {
             $username_status = "This username is not available";

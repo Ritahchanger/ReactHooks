@@ -77,7 +77,8 @@ $user_email=$_GET['email'];
                     success: function(response) {
                         $('#circular_preloader').hide();
                         console.log(response);
-
+    
+                        window.location.assign("http://localhost/phpfullstack/1.4/ReactHooks/authentication/Login.php");
                     },
                     error: function(xhr, status, error) {
                         console.log(error);
