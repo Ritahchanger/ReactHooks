@@ -1,44 +1,115 @@
-.nav{
-    box-shadow:0 0 5px rgba(0,0,0,0.75);
-    padding:1rem 3rem;
+.nav {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+  padding: 1rem 3rem;
 }
-.logos{
-    font-size:3rem;
-    font-weight:600;
-    color:#ff004f;
+.logo_div a {
+  display: inline-block;
 }
-.profileName{
-    font-size:1.7rem;
-    margin-right:2rem;
+.logos {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ff004f;
 }
-.profile_image i{
-    font-size:3rem;
-    margin:0 2rem;
+.profileName {
+  font-size: 1.7rem;
+  margin-right: 2rem;
+}
+.profile_image i {
+  font-size: 3rem;
+  margin: 0 2rem;
+  background: #ababab;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.profile_image i:hover {
+  background: #000;
+  color: #fff;
 }
 .fa-sharp {
-    font-size: 3rem;
-    cursor: pointer;
-    transition:all 0.5s;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 
 .fa-sharp:hover {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
-.main{
-    display:flex;
+.main {
+  display: flex;
 }
 .main .section_left {
-    flex-basis: 300px;
-    background:#290340;
-    height: 100vh;
-    padding:0 2rem;
-    color:#fff;
+  flex-basis: 300px;
+  background: #290340;
+  height: 100vh;
+  padding: 0 2rem;
+  color: #fff;
+  transition: all 0.5s;
 }
 
 .main .center_section {
-    flex-basis: calc(100% - 300px);
-    background:#f5f5f5;
-    margin:2rem;
-    border-radius:20px;
-    padding:1rem;
+  flex-basis: calc(100% - 300px);
+  background: #f5f5f5;
+  margin: 2rem;
+  border-radius: 20px;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+.appointment_table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.appointment_table table thead {
+  background: #ff004f;
+  color: #fff;
+  font-weight: 700;
+}
+.appointment_table table thead tr td {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.appointment_table table td {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+.main_menu {
+  font-size: 4rem;
+  display: inline-block;
+  margin-left: 4rem;
+}
+#menu_bar{
+    display:none;
+}
+
+@media (max-width: 1000px) {
+  .main .section_left {
+    display: none;
+  }
+  .main_menu {
+    display:block;
+  }
+}
+
+
+@media (max-width: 950px) {
+  html {
+    font-size: 50%;
+  }
+  .logos {
+    font-size: 2rem;
+  }
+  .main .center_section {
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .profileName {
+    display: none;
+  }
 }

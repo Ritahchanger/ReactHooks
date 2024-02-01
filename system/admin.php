@@ -22,8 +22,9 @@ if (!isset($_GET['id'])) {
 <body>
     <div class="nav">
         <div class="container_wrapper flex">
-            <div class="logo_div">
+            <div class="logo_div flex">
                 <a href="#" class="logos">DASHBOARD</a>
+                <a href="#" class="main_menu" id="menu_bar">&#9776;</a>
             </div>
             <div class="profile_div flex">
                 <div class="profile_image">
@@ -42,7 +43,285 @@ if (!isset($_GET['id'])) {
 
         <section class="center_section">
             <div class="main_content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, ad! Incidunt, tempora hic? Odio, eaque quos eos nemo similique dolorem quam culpa dolor ullam tempora id nulla ipsum facere hic molestias numquam vero ut nihil perferendis et quia molestiae! Accusantium, perspiciatis autem! Minima autem in quae quaerat voluptatem assumenda maxime quo quasi porro aliquam officiis facere, illo velit, accusantium officia amet eaque. Dolorum, odio, delectus maiores, ratione nihil consequuntur ipsa amet fuga nostrum dolore deserunt magni officia dolorem! Ipsa hic dolorem vitae vero ratione, facere vel aspernatur placeat iusto quod reprehenderit molestiae ad maxime sequi, recusandae accusamus commodi quidem tenetur veritatis! Velit dolorum pariatur consectetur magni laborum. Corporis repudiandae fuga voluptatibus nostrum veniam aut magni culpa eos cumque, quam, totam asperiores odit expedita ratione rem ex deserunt tenetur eligendi. Illum culpa quasi, eum nisi sit, debitis, aliquid voluptatem molestiae iure architecto velit doloremque fugiat! Vero sunt dignissimos rerum eius laudantium. Dignissimos tempore dolore neque placeat hic inventore. Minus, optio id saepe fugit est doloribus maiores vitae impedit labore molestias dolorem exercitationem modi laboriosam voluptate! Nostrum quia esse facilis consequuntur dolor tempore perferendis eaque, itaque aspernatur nihil iste recusandae veniam laborum explicabo ducimus quis? Omnis odio asperiores assumenda qui quia dicta hic? Dicta similique facere ex molestiae eum possimus architecto itaque consequuntur aperiam sit inventore, excepturi alias ducimus a nam eveniet obcaecati accusantium voluptatum odit, recusandae minus cupiditate quae ad. Itaque rerum laborum asperiores labore nemo voluptates nobis ea, modi cumque saepe nesciunt id animi aliquid. Enim ducimus sed eius error perferendis? Pariatur aliquid ex dicta est omnis asperiores ullam provident atque doloribus aspernatur, repudiandae eum? Autem, quisquam tempore minus minima sequi, voluptates deleniti asperiores aut optio atque dolorum, aperiam dolores veniam numquam. Iusto neque nihil maiores ea ipsum. Exercitationem placeat possimus ad aspernatur quod natus magnam, iusto iste doloremque, mollitia eius nulla eveniet beatae et facilis atque ratione. Ipsum sequi maiores autem suscipit libero veritatis labore minima mollitia incidunt magni omnis consectetur natus ad aperiam tenetur nesciunt ipsam similique, ullam voluptatem nam rem tempore. Voluptatibus laudantium fugiat, nihil, officia odio doloremque magnam voluptatum eius quibusdam dignissimos modi reprehenderit officiis? Fuga, distinctio quae, nesciunt reiciendis omnis earum optio laborum magnam, excepturi ducimus itaque delectus qui quas! Nesciunt sapiente eaque adipisci suscipit nisi error est illum. Laborum voluptatum temporibus dolor sit omnis eveniet placeat illum facilis earum itaque voluptates at ipsa natus eum aperiam animi accusamus, deleniti fugit, vero sequi tenetur alias!</p>
+                <h3 class="sub_headers">APPOINTMENTS</h3>
+                <div class="appointment_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>App No</td>
+                                <td>Ptn Name</td>
+                                <td>App Date</td>
+                                <td>App Time</td>
+                                <td>App Day</td>
+                                <td>App Sts</td>
+                                <td>View</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>67231</td>
+                                <td>Fendiola</td>
+                                <td>6-07-2023</td>
+                                <td>12:00am</td>
+                                <td>Thursday</td>
+                                <td>pending</td>
+                                <td><i class="fa fa-eye"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
