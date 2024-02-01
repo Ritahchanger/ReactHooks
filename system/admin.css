@@ -1,0 +1,44 @@
+.nav{
+    box-shadow:0 0 5px rgba(0,0,0,0.75);
+    padding:1rem 3rem;
+}
+.logos{
+    font-size:3rem;
+    font-weight:600;
+    color:#ff004f;
+}
+.profileName{
+    font-size:1.7rem;
+    margin-right:2rem;
+}
+.profile_image i{
+    font-size:3rem;
+    margin:0 2rem;
+}
+.fa-sharp {
+    font-size: 3rem;
+    cursor: pointer;
+    transition:all 0.5s;
+}
+
+.fa-sharp:hover {
+    transform: rotate(180deg);
+}
+.main{
+    display:flex;
+}
+.main .section_left {
+    flex-basis: 300px;
+    background:#290340;
+    height: 100vh;
+    padding:0 2rem;
+    color:#fff;
+}
+
+.main .center_section {
+    flex-basis: calc(100% - 300px);
+    background:#f5f5f5;
+    margin:2rem;
+    border-radius:20px;
+    padding:1rem;
+}

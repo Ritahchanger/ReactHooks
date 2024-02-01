@@ -42,3 +42,6 @@ input{
     align-content:center;
     justify-content:space-between;
 }
+.sub_headers{
+    font-size:3rem;
+}
